@@ -1,0 +1,6 @@
+[book]
+authors = ["Antonio Kam"]
+language = "en"
+multilingual = false
+src = "src"
+title = "The MONS Project (IB CS Paper 3 M21)"
