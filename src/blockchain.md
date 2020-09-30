@@ -6,6 +6,6 @@ This works in cryptocurrency by using [hashing](/hashing.html) algorithms and ma
 
 ---
 
-On a more technical level, h
+
 
 ...
