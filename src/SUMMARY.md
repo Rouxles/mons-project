@@ -4,3 +4,4 @@
 - [Block](./block.md)
   - [Blockchain](./blockchain.md)
 - [Hashing](./hashing.md)
+  - [Merkle Root](./merkle-root.md)
