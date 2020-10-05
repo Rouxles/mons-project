@@ -26,3 +26,9 @@ A miner aims to gather transactions from the transaction pool into a "candidate 
     - Target: This is calculated from the difficulty value which is set by the cryptocurrency network in order to regulate how hard it is to add a block of transactions to the blockchain. Then, the miners will keep hashing the block header with a *nonce* at the start (arbitrary number) in order to get the hash below the target value.
 
 Once a nonce is found that makes the block header + nonce below the target value, the block is solved, and then all transactions of the block are added to the blockchain. The nonce can only be found through brute force, as it has an NP time complexity.
+
+---
+
+### Fixed Sizes
+
+Each block has a maximum size - meaning that only a certain number of transactions from the memory pool can be placed in a block.
