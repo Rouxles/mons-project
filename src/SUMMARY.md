@@ -5,5 +5,8 @@
   - [Blockchain](./blockchain.md)
 - [Hashing](./hashing.md)
   - [Merkle Root](./merkle-root.md)
+  - [Public and Private Keys](./public-private.md)
+    - [Digital Signature](./digital-signature.md)
+    - [SSH](./ssh.md)
 - [Transactions](./transaction.md)
 - [Key Terms and Definitions](./definitions.md)

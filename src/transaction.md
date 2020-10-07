@@ -1,6 +1,6 @@
 # Transactions
 
-## Coinbase Transaction
+## Coinbase Transaction (additional information)
 
 This is the transaction that goes to the miner when they successfully mine the block. Think of this as like putting your name on the top of a lottery sheet in order to address the contents of the reward to you.
 
