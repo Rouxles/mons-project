@@ -10,3 +10,5 @@
     - [SSH](./ssh.md)
 - [Transactions](./transaction.md)
 - [Key Terms and Definitions](./definitions.md)
+- [Mindmaps](./mindmap.md)
+  - [Block](./mindmap-block.md)
