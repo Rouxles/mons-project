@@ -18,6 +18,8 @@ When a transaction is made within a cryptocurrency, it doesn't go to the blockch
 
 A miner aims to gather transactions from the transaction pool into a "candidate block", and then attempt to add this block to the blockchain.
 
+## Header Fields
+
 - Each candidate block has a header, which contain the following metadata (data that describes data) about the block:
     - Version: Describes the structure of the data inside the block - this allows miners to know what standard the block is in
     - Last Block: An identification number for the previous block - this is hashed
