@@ -20,7 +20,7 @@ This will contain a collection of 'mindmaps' in a list form based around differe
   - Target ([Nonce](#nonce))
     - This is calculated by the 'difficulty value' set by the cryptocurrency network to regulate how hard it is to add a block to the network. (Basically people need to keep incrementing the [nonce](#nonce) (alongside the hash data) until the value of the hash is below the target value - related to [hashing](#hashing))
   - Nonce
-    - This is a value that people can use to verify
+    - This is a value that people can use to verify that the block was mined properly. 
 
 ### Genesis Block
 
@@ -30,7 +30,6 @@ This will contain a collection of 'mindmaps' in a list form based around differe
 ### Blockchain
 
 - The blockchain is basically many blocks linked together. In the [header](#header) for each block, they're linked to the hash of the previous block. The validity of the chain is dependent on the previous block being integral, meaning that if you wanted to change a transaction in one block in the chain, you would need to find the correct [nonce](#nonce) for all the previous blocks beforehand faster than the rest of the mining pool.
-- 
 
 <!--List of transactions and header-->
 
@@ -38,11 +37,21 @@ This will contain a collection of 'mindmaps' in a list form based around differe
 
 ## Security
 
+### Immutable Transactions
+
 ### Hashing
+
+- Hashing is a one-way function - meaning that it's very easy to hash a string, but very hard to reverse engineer.
+- Hashing typically provides a result that's of a fixed length and random. When even one character in the hash changes, the output of the hash completely changes.
 
 #### Nonce
 
+- Nonce stands for Number only used once.
+- This nonce and the transaction data in a block are hashed together to create a block hash. If this block hash is lower than the [target](#header), then the nonce will have been found, and mining will have succeeded. 
+
 ### Digital Signatures
+
+- This is used to identify the owner of a currency.
 
 ---
 
