@@ -49,4 +49,21 @@ Pablo states: "In a traditional banking system, users trust the banks to keep ev
 
 4 - With reference to the key technologies, to what extent do you believe the MONS project will ensure the safety of the residents' money? [12]
 
+Plan:
+- Positive
+  - Proof of work requires a lot of computational power - hard to fake data
+  - Digital signature makes it obvious to the node that blocks are given from the correct user and stuff
+- Negative
+  - In the beginning stages of the currency, it's very easy to get 51% of the share, and thus at the beginning, it will be harder to trust the data of the resident's money
+  - This requires the people to be technologically secure - if the people have weak passwords, then a digital signature won't matter as other people will be able to access their funds and stuff like that
+- Evaluation
+  - Another potential method that could be used is proof-of-stake -> does the same thing as proof-of-work but it's unlikely to have a 51% attack as this would mean they would need a large share of the currency (rather than just computational power), which is far far far more expensive
+
+---
+
+#### 12 Marker Answer
+
+The MONS project uses proof of work, which ensures that the resident's money is safe. Proof of work requires a group of miners to race and find a nonce that when hashed together (using an algorithm such as SHA-256) with the block header in a candidate block (a block to be put on the blockchain), results in a value lower than the target value set by the cryptocurrency. This target is changed by the MONS project such that it takes all the miners in a network 10 minutes to find a suitable nonce. Additionally, each block in a blockchain is linked to the previous block, meaning that if a single transaction in a block is changed, the whole link from that block onwards needs to be rebuilt, so if a transaction is several blocks down, it takes a lot of computational power to rebuild the chain. All this helps to ensure that the residents' money has not been tampered with, ensuring the safety of their money. However, in the beginning stages of the MONS project, there will be fewer miners competing to find the correct nonce, so staging a 51% attack at the earlier stages will be far easier, and potentially realistically viable. When a 51% attack occurs, a single party will have the majority of the resources in the mining pool, allowing them to create malicious transactions and as a result, makes Santa Monica's resident's money potentially unsafe and invalid. This could happen if a Trojan horse virus infected much of Santa Monica's computers, which would allow for a single party to be able to have the majority of the mining pool. 
+
+Additionally, digital signatures secure the transactions of residents, which makes sure that 
 
