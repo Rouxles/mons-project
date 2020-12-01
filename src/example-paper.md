@@ -69,3 +69,6 @@ Additionally, **digital signatures secure the transactions of residents, which m
 
 In evaluation, it is likely the ensure that MONS will be safe for citizens as long as they are tech-savvy and are able to use computers that are secure, and use a password manager to make sure all their passwords are unique and secure. Additionally, the currency will only be more secure with more users (as there will be more demand for miners, thus making it harder to stage a 51% attack), meaning that citizens will need to be informed about why MONS is secure to be confident in using it, and thus making the system more secure.
 
+---
+
+Add RSA encryption for digital signature section above.
