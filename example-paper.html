@@ -1,0 +1,309 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Example Question - November Paper - The MONS Project (IB CS Paper 3 M21)</title>
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="favicon.png">
+        
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        
+        <link rel="stylesheet" href="css/print.css" media="print">
+        
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="introduction.html">Introduction</a></li><li class="chapter-item expanded "><a href="block.html"><strong aria-hidden="true">1.</strong> Block</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="blockchain.html"><strong aria-hidden="true">1.1.</strong> Blockchain</a></li></ol></li><li class="chapter-item expanded "><a href="hashing.html"><strong aria-hidden="true">2.</strong> Hashing</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="merkle-root.html"><strong aria-hidden="true">2.1.</strong> Merkle Root</a></li><li class="chapter-item expanded "><a href="public-private.html"><strong aria-hidden="true">2.2.</strong> Public and Private Keys</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="digital-signature.html"><strong aria-hidden="true">2.2.1.</strong> Digital Signature</a></li><li class="chapter-item expanded "><a href="ssh.html"><strong aria-hidden="true">2.2.2.</strong> SSH</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="transaction.html"><strong aria-hidden="true">3.</strong> Transactions</a></li><li class="chapter-item expanded "><a href="definitions.html"><strong aria-hidden="true">4.</strong> Key Terms and Definitions</a></li><li class="chapter-item expanded "><a href="example-paper.html" class="active"><strong aria-hidden="true">5.</strong> Example Question - November Paper</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="potential-questions.html"><strong aria-hidden="true">5.1.</strong> Potential Questions</a></li></ol></li><li class="chapter-item expanded "><a href="mindmap.html"><strong aria-hidden="true">6.</strong> Mindmaps</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">The MONS Project (IB CS Paper 3 M21)</h1>
+
+                    <div class="right-buttons">
+                        
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#november-2020-paper-3-past-paper" id="november-2020-paper-3-past-paper">November 2020 Paper 3 Past Paper</a></h1>
+<blockquote>
+<p>These notes aren't too good right now - these will be changed.</p>
+</blockquote>
+<p>1a - Identify 2 characteristics of Peer-to-peer network [2]</p>
+<ul>
+<li>A peer to peer network contains multiple nodes connected to each other, where each node acts as both a client (receiving data) and a server (sending data).</li>
+<li>Scalable</li>
+<li>Seeding - can be used to say how reliable one connection is over another connection. (Sort of like a trust mechanism)</li>
+</ul>
+<p>1b - Identify 2 sources of entropy. [2]</p>
+<ul>
+<li>Atmospheric Noise - True RNG</li>
+<li>Time - Pseudo RNG</li>
+<li>Light level in the atmosphere</li>
+<li>Temperature/Humidity</li>
+</ul>
+<hr />
+<p>2a - Describe the steps that need to be carried out by the blockchain system to find a user's central MONS balance [4]</p>
+<ul>
+<li>The blockchain system calculates the balance of each user by looking at the transaction history. </li>
+<li>When a user needs their balance calculated (for future transactions for example), each node looks at transactions associated with the user (both as the sender and the receiver), and then calculates how much cryptocurrency has been given to the user, and how much cryptocurrency the user has given away to other users.</li>
+<li>These two values are then added up together (with the cryptocurrency the user given away being negative) to find a user's MONS balance.</li>
+<li>UTXO - sequentially goes through UTXO for each user from the start of the block to the end of the block.</li>
+<li>The block when split - calculations are done that way</li>
+<li>Blocks have to be validated in order for the transaction to be valid.</li>
+</ul>
+<p>Dolores states &quot;one of the great things about the blockchain is that we can ensure that the solution time remains at 10 minutes, and we can do this even as the number of MONS miners increases&quot; (lines 63-65).</p>
+<p>2b - Explain why it is important to ensure the solution time remains at 10 minutes. [4]</p>
+<ul>
+<li>By setting the solution time at 10 minutes, a block can only be added to the MONS blockchain every 10 minutes.</li>
+<li>Making the solution time take 10 minutes (as opposed to 2 seconds) allows more transactions from the memory pool to be placed in a blockchain, and also helps with making sure transactions are non-malicious. As the solution time is 10 minutes, if a malicious user decides to edit transactions 3 blocks down, they would need to spend 30 minutes to find correct nonces to keep the blocks chained to each other. By the time they finish finding correct nonces, other miners would have added blocks to the blockchain, leading to 30 minutes of wasted time by the malicious users.</li>
+<li>Also to ensure that the difficulty of mining the block does not change as the currency gets more popular.</li>
+</ul>
+<hr />
+<p>Critics have complained about the potential environmental effects caused by the computing resources required by a blockchain network.</p>
+<p>3 - Analyse the potential effects that the use of MONs could have on the environment. [6]</p>
+<ul>
+<li>Proof of work uses a lot of electricity because a lot of computational power is needed.</li>
+<li>Printed money - cost to environment by producing physical money (metal/heating/trees etc)</li>
+<li>Inflation - don't need to print more money/different types of money</li>
+<li>Heat generated by proof-of-work -&gt; potential difference in climate change</li>
+<li>Depends on where the electricity comes from</li>
+<li>If electricity comes from more renewable sources of energy, it is likely that cryptocurrency is more environmentally friendly, but if electricity comes from non-renewable sources, it is more likely that cryptocurrency is worse from the environment. Looking at the world today, a sizeable portion of energy comes from non-renewable energy, so it is likely that the MONS project will be bad for the environment.</li>
+</ul>
+<hr />
+<p>Pablo states: &quot;In a traditional banking system, users trust the banks to keep everyone's money safe; but with MONS, the whole blockchain, right from the very first transaction, would be visible to all MONS users, so it is important to be able to explain to citizens how their money is guaranteed to be safe&quot; (lines 109-112).</p>
+<p>4 - With reference to the key technologies, to what extent do you believe the MONS project will ensure the safety of the residents' money? [12]</p>
+<p>Plan:</p>
+<ul>
+<li>Positive
+<ul>
+<li>Proof of work requires a lot of computational power - hard to fake data</li>
+<li>Digital signature makes it obvious to the node that blocks are given from the correct user and stuff</li>
+</ul>
+</li>
+<li>Negative
+<ul>
+<li>In the beginning stages of the currency, it's very easy to get 51% of the share, and thus at the beginning, it will be harder to trust the data of the resident's money</li>
+<li>This requires the people to be technologically secure - if the people have weak passwords, then a digital signature won't matter as other people will be able to access their funds and stuff like that</li>
+</ul>
+</li>
+<li>Evaluation
+<ul>
+<li>Another potential method that could be used is proof-of-stake -&gt; does the same thing as proof-of-work but it's unlikely to have a 51% attack as this would mean they would need a large share of the currency (rather than just computational power), which is far far far more expensive</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h4><a class="header" href="#12-marker-answer" id="12-marker-answer">12 Marker Answer</a></h4>
+<p>The MONS project uses <strong>proof of work, which ensures that the resident's money is safe. Proof of work requires a group of miners to race and find a nonce</strong> that when hashed together (using an algorithm such as SHA-256) with the block header in a candidate block (a block to be put on the blockchain), results in a value lower than the target value set by the cryptocurrency. This target is changed by the MONS project such that it takes all the miners in a network 10 minutes to find a suitable nonce. <strong>Additionally, each block in a blockchain is linked to the previous block, meaning that if a single transaction in a block is changed, the whole link from that block onwards needs to be rebuilt</strong>, so if a transaction is several blocks down, it takes a lot of computational power to rebuild the chain. All this helps to ensure that the residents' money has not been tampered with, ensuring the safety of their money. However, in the beginning stages of the MONS project, there will be <strong>fewer miners competing to find the correct nonce, so staging a 51% attack at the earlier stages will be far easier</strong>, and potentially realistically viable. When a 51% attack occurs, a single party will have the majority of the resources in the mining pool, allowing them to create malicious transactions and as a result, makes Santa Monica's resident's money potentially unsafe and invalid. This could happen if a Trojan horse virus infected much of Santa Monica's computers, which would allow for a single party to be able to have the majority of the mining pool. </p>
+<p>Additionally, <strong>digital signatures secure the transactions of residents, which makes sure that transactions are not created by another person.</strong> This works by using asymmetric encryption with an algorithm such as the RSA encryption algorithm. <strong>A digital signature is created by hashing the transaction data and private key together, and this digital signature is placed alongside the transaction to ensure that the transaction is 'signed' by the intended person.</strong> When people verify, they use the public key associated with the user alongside the digital signature and the public key, which will then return a boolean value describing whether the digital signature is correct. This digital signature is different for every transaction, meaning that a user cannot reuse the same digital signature for other transactions, ensuring the privacy of citizens' data. However, this depends on how tech-savvy the users are. If they use weak passwords or use the same password for every account, and possibly don't use an anti-virus, they could be infected by a Trojan horse which would allow for more likelihood of a 51% attack, or at the very least, transactions being falsely created by hackers using the accounts of infected citizens whether using their physical devices or through virtual means.</p>
+<p>In evaluation, it is likely the ensure that MONS will be safe for citizens as long as they are tech-savvy and are able to use computers that are secure, and use a password manager to make sure all their passwords are unique and secure. Additionally, the currency will only be more secure with more users (as there will be more demand for miners, thus making it harder to stage a 51% attack), meaning that citizens will need to be informed about why MONS is secure to be confident in using it, and thus making the system more secure.</p>
+<hr />
+<p>Add RSA encryption for digital signature section above.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="definitions.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="potential-questions.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="definitions.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="potential-questions.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

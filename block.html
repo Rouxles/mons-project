@@ -1,0 +1,260 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Block - The MONS Project (IB CS Paper 3 M21)</title>
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="favicon.png">
+        
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        
+        <link rel="stylesheet" href="css/print.css" media="print">
+        
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="introduction.html">Introduction</a></li><li class="chapter-item expanded "><a href="block.html" class="active"><strong aria-hidden="true">1.</strong> Block</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="blockchain.html"><strong aria-hidden="true">1.1.</strong> Blockchain</a></li></ol></li><li class="chapter-item expanded "><a href="hashing.html"><strong aria-hidden="true">2.</strong> Hashing</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="merkle-root.html"><strong aria-hidden="true">2.1.</strong> Merkle Root</a></li><li class="chapter-item expanded "><a href="public-private.html"><strong aria-hidden="true">2.2.</strong> Public and Private Keys</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="digital-signature.html"><strong aria-hidden="true">2.2.1.</strong> Digital Signature</a></li><li class="chapter-item expanded "><a href="ssh.html"><strong aria-hidden="true">2.2.2.</strong> SSH</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="transaction.html"><strong aria-hidden="true">3.</strong> Transactions</a></li><li class="chapter-item expanded "><a href="definitions.html"><strong aria-hidden="true">4.</strong> Key Terms and Definitions</a></li><li class="chapter-item expanded "><a href="example-paper.html"><strong aria-hidden="true">5.</strong> Example Question - November Paper</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="potential-questions.html"><strong aria-hidden="true">5.1.</strong> Potential Questions</a></li></ol></li><li class="chapter-item expanded "><a href="mindmap.html"><strong aria-hidden="true">6.</strong> Mindmaps</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">The MONS Project (IB CS Paper 3 M21)</h1>
+
+                    <div class="right-buttons">
+                        
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#block" id="block">Block</a></h1>
+<p>Each <em>block</em> in a <a href="/blockchain.html">blockchain</a> records a large number of transactions that have taken place (for example, in Bitcoin it's around 2400)</p>
+<p>At the end of each block, there needs to be a 'proof of work' where each result in a block is chained together, and 'miners' find a value that returns a hash that has a set number of 0s at the beginning (which can be changed depending on number of miners)</p>
+<p>Each block must contain the hash of the previous block in the header - making a chain. Thus, if you want to change an earlier block, you need to calculate the proof of work for all subsequent blocks too. And at that point, you are simply racing against other miners (assuming proof of work is used instead of proof of stake [links added later!]) - if you have less than 50% of the share of resources in terms of mining, then you won't be able to keep up (in terms of trying to fake data)</p>
+<p>The first block in the chain (without any data in the 'previous block hash' field) is called the genesis block.</p>
+<p>Whenever the miner gets the correct nonce to make the block data + nonce lower than the target value, the block now is successful and is added to the blockchain. Through this, the miners then get paid a share of the cryptocurrency for their work (which is why miners have an incentive to mine, and a partial reason as to why the mining pool constantly grows)</p>
+<hr />
+<p>A block is formed by different miners.</p>
+<p>When a transaction is made within a cryptocurrency, it doesn't go to the blockchain straight away, but is held in a transaction pool (place where multiple transactions are stored)</p>
+<p>A miner aims to gather transactions from the transaction pool into a &quot;candidate block&quot;, and then attempt to add this block to the blockchain.</p>
+<h2><a class="header" href="#header-fields" id="header-fields">Header Fields</a></h2>
+<ul>
+<li>Each candidate block has a header, which contain the following metadata (data that describes data) about the block:
+<ul>
+<li>Version: Describes the structure of the data inside the block - this allows miners to know what standard the block is in</li>
+<li>Last Block: An identification number for the previous block - this is hashed</li>
+<li>Transactions: This is basically the <a href="/merkle-root.html"><strong>Merkle Root</strong></a> where all transactions are hashed into a single string.</li>
+<li>Time: The current time (when the block was made)</li>
+<li>Target: This is calculated from the difficulty value which is set by the cryptocurrency network in order to regulate how hard it is to add a block of transactions to the blockchain. Then, the miners will keep hashing the block header with a <em>nonce</em> at the start (arbitrary number) in order to get the hash below the target value.</li>
+</ul>
+</li>
+</ul>
+<p>Once a nonce is found that makes the block header + nonce below the target value, the block is solved, and then all transactions of the block are added to the blockchain. The nonce can only be found through brute force, as it has an NP time complexity.</p>
+<hr />
+<h3><a class="header" href="#fixed-sizes" id="fixed-sizes">Fixed Sizes</a></h3>
+<p>Each block has a maximum size - meaning that only a certain number of transactions from the memory pool can be placed in a block.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="introduction.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="blockchain.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="introduction.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="blockchain.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>
